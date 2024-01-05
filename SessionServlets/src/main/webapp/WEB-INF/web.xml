@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>SessionServlets</display-name>
+  <servlet>
+  <servlet-name>HelloServlets</servlet-name>
+  <servlet-class>servlets.params.HelloServlets</servlet-class>
+  <init-param>
+  <param-name>debug</param-name>
+  <param-value>true</param-value>
+  </init-param>
+  <init-param>
+  <param-name>listing</param-name>
+  <param-value>true</param-value>
+  </init-param>
+  </servlet>
+<servlet>
+        <servlet-name>second JSP</servlet-name>
+        <jsp-file>/jsp/hi2.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+        <servlet-name>second JSP</servlet-name>
+        <url-pattern>/home</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Books JSP</servlet-name>
+<jsp-file>/list-books.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+<servlet-name>Books JSP</servlet-name>
+<url-pattern>/books</url-pattern>
+</servlet-mapping>
+<servlet>
+        <servlet-name>Authors JSP</servlet-name>
+        <jsp-file>/jsp/author/echo.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+        <servlet-name>Authors JSP</servlet-name>
+        <url-pattern>/authors</url-pattern>
+</servlet-mapping>
+  
+  
+   <!-- Define servlet's URL mapping -->
+   <servlet-mapping>
+       <servlet-name>HelloServlets</servlet-name>
+       <url-pattern>/echoServlets</url-pattern>
+   </servlet-mapping>
+
+ <context-param>
+ <param-name>databaseUrl</param-name>
+ <param-value>jdbc:oracle:thin:@localhost:1521/XE</param-value>
+ </context-param>
+ <context-param>
+ <param-name>login</param-name>
+ <param-value>hr/hr</param-value>
+ </context-param>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>
